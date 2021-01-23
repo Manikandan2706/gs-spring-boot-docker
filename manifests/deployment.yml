@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksemea01-5e32"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksemea01-5e32"
+  template:
+    metadata:
+      labels:
+        app: "aksemea01-5e32"
+    spec:
+      containers:
+        - name: "aksemea01-5e32"
+          image: "akscontainer001.azurecr.io/aksemea01"
+          ports:
+          - containerPort: 80
